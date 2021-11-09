@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/environment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guiTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/pg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="CHU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seoTest.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/seoTest.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../독후감/페이스북사태.hwp" beforeDir="false" afterPath="$PROJECT_DIR$/../../독후감/페이스북사태.hwp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +26,14 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3ecaab3a-f3ec-440c-93bb-4830e66292e6" />
+        <option name="url" value="https://github.com/JiwonChung/schoolFiles.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -147,8 +148,17 @@
       <workItem from="1635885252733" duration="622000" />
       <workItem from="1636177132040" duration="7197000" />
       <workItem from="1636258814329" duration="982000" />
-      <workItem from="1636283632587" duration="13622000" />
+      <workItem from="1636283632587" duration="13786000" />
+      <workItem from="1636302493932" duration="56000" />
     </task>
+    <task id="LOCAL-00001" summary="CHU">
+      <created>1636302299931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1636302299931</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +178,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="CHU" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHU" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
