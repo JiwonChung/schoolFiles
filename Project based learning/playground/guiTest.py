@@ -1,7 +1,10 @@
+import threading
+import time
 import tkinter as tk
+from datetime import datetime
+
 import cv2
 import dlib
-import os
 from PIL import ImageTk, Image
 import numpy as numpy
 
@@ -9,28 +12,6 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('models/shape_predictor_68_face_landmarks.dat')
 facerec = dlib.face_recognition_model_v1('models/dlib_face_recognition_resnet_model_v1.dat')
 cap = cv2.VideoCapture(0)
-#
-# while True:
-#     # 동영상 파일에서 프레임 단위로 읽기
-#     ret, img = cap.read()
-#     if not ret:
-#         break
-#
-#     faces = detector(img)
-#     if len(faces) != 0:
-#         for face in faces:
-#             # dlib 객체 생성
-#             dlib_shape = predictor(img, face)
-#             # dlib 객체를 np로 변환
-#             shape_2d = numpy.array([[p.x, p.y] for p in dlib_shape.parts()])
-#             print(len(shape_2d))
-#             # visualize
-#             img = cv2.rectangle(img, pt1=(face.left(), face.top()), pt2=(face.right(), face.bottom()),
-#                                 color=(255, 255, 255), thickness=2, lineType=cv2.LINE_AA)
-#     # 출력
-#     cv2.imshow('img', img)
-#     # 1msec  만큼 기다리기
-#     cv2.waitKey(1)
 
 window = tk.Tk(className="정지원만세 - Windows Color")
 
@@ -38,27 +19,6 @@ window = tk.Tk(className="정지원만세 - Windows Color")
 window.geometry("480x320+10+10")
 window.configure(bg="black")
 window.resizable(False, False)
-# # 레이블
-# label = tk.Label(
-#     text="Sherpa",
-#     foreground="green",
-#     background="black",
-#     width=13,
-#     height=6
-# )
-# label.pack()
-#
-# button = tk.Button(
-#     text = "Click me",
-#     width = 25,
-#     height = 5,
-#     fg = "red",
-#     bg = "blue"
-# )
-# button.pack()
-#
-# Font_tuple = ("Comic Sans MS", 20, "bold")
-# label.configure(font=Font_tuple)
 
 font_title = ("Microsoft YaHei UI", 20, "bold")
 font_button = ("Microsoft YaHei UI", 15, "bold")
@@ -96,34 +56,101 @@ button_slide1_profile.place(x=0, y=150)
 # img 레이블
 label_slide2_img = tk.Label(frame_slide2)
 label_slide2_img.grid()
+# ------------------    GUI end   --------------------
 
 
+# 내 얼굴 npy 파일
+savedDescriptors = {
+    'Jiwon': numpy.load('img/desc.npy', allow_pickle=True)
+}
+
+
+# 프레임 뽑기
 def show_frames():
+    now = datetime.now()
     # Get the latest frame and convert into Image
     isReturnValue, img = cap.read()
     if not isReturnValue:
         return
-    faces = detector(img)
-    # 얼굴 1개만 아니면 계속 함
-    if len(faces) != 0:
-        for face in faces:
-            # dlib 객체 생성
-            dlib_shape = predictor(img, face)
-            # dlib 객체를 numpy 객체로 변환
-            shape_2d = numpy.array([[p.x, p.y] for p in dlib_shape.parts()])
-            # color(b, g, r)
-            img = cv2.rectangle(img, pt1=(face.left(), face.top()), pt2=(face.right(), face.bottom()),
-                                color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
-    img = cv2.resize(img, dsize=(0, 0), fx=0.5, fy=0.5)
-    # print(img.shape)
+    rects, shapes, shapes_np = find_faces(img)
 
+    # 얼굴 0개만 아니면 계속 함
+    if len(rects) != 0:
+        for i, name in enumerate(useEuclideanDistance(encode_faces(img, shapes))):
+            img = cv2.rectangle(img, pt1=(rects[i][0][0], rects[i][0][1]), pt2=(rects[i][1][0], rects[i][1][1]),
+                                color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
+            img = cv2.putText(img, name, (rects[i][0][0], rects[i][0][1]), cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
+                              2, (0, 255, 255), 3, cv2.LINE_8)  # 폰트, 숫자, 색, 라인 유형 선택하기
+
+    # 이 부분을 따로 분리했으면 좋겠음
+    img = cv2.resize(img, dsize=(0, 0), fx=0.5, fy=0.5)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = Image.fromarray(img)
     imagetk = ImageTk.PhotoImage(image=img)
     label_slide2_img.imgtk = imagetk
     label_slide2_img.configure(image=imagetk)
-    label_slide2_img.after(1, show_frames)
+    # print(datetime.now() - now)
+    label_slide2_img.after(100, show_frames)
+
+
+# find_faces fuction's param should be rgb img file
+# for loop up
+def find_faces(img):
+    global shape, k
+    dets = detector(img, 1)
+    # 얼굴을 하나도 찾지 못했을 경우 return 빈 배열
+    if len(dets) == 0:
+        return numpy.empty(0), numpy.empty(0), numpy.empty(0)
+
+    # 결과물 저장할 변수들
+    rects, shapes = [], []
+    shapes_np = numpy.zeros((len(dets), 68, 2), dtype=int)
+
+    for k, d in enumerate(dets):
+        rect = ((d.left(), d.top()), (d.right(), d.bottom()))
+        rects.append(rect)
+
+        # 랜드마크 구하기
+        shape = predictor(img, d)
+        shapes.append(shape)
+
+    print(len(shapes))
+    # numpy array 로 바꾸기
+    for i in range(0, 68):
+        shapes_np[k][i] = (shape.part(i).x, shape.part(i).y)
+
+    return rects, shapes, shapes_np
+
+
+# 68개의 점 -> 128개의 벡터
+def encode_faces(img, shapes):
+    face_descriptors = []
+    for s in shapes:
+        face_descriptor = facerec.compute_face_descriptor(img, s)
+        face_descriptors.append(numpy.array(face_descriptor))
+
+    return numpy.array(face_descriptors)
+
+
+# 유클리드 디스턴스를 계산
+def useEuclideanDistance(receivedDescriptors):
+    # print(len(receivedDescriptors))
+    names = []
+
+    # input 불러 오기
+    for receivedDescriptor in receivedDescriptors:
+        # 저장된거 불러오기
+        for name, savedDescriptor in savedDescriptors.items():
+            # 저장된 거랑 비교하기
+            distance = numpy.linalg.norm([receivedDescriptor] - savedDescriptor, axis=1)
+            if distance < 0.6:
+                names.append(name)
+            else:
+                names.append('unknown')
+    print(names)
+    return names
 
 
 show_frames()
 window.mainloop()
+
