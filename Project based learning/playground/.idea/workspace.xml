@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="CHU">
-      <change afterPath="$PROJECT_DIR$/test/cudaTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_eye.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_eye_tree_eyeglasses.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalcatface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalcatface_extended.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalface_alt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalface_alt2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalface_alt_tree.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_frontalface_default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_fullbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_lefteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_licence_plate_rus_16stages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_lowerbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_profileface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_righteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_russian_plate_number.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_smile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/haarcascades/haarcascade_upperbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/onlyCV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/realtime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/saveFace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/trainFace.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/trainer/trainer.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../전기/3-내선공사실습 11.16(수) 2학년_수업(1-2) 중 수행과제(황&amp;박)-2번, (21)번, 이름(정지원).hwp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../전기/4-내선공사실습 11.16(수 )2학년_수업(3-4) 중 수행과제(황&amp;박)_2반, (  )번, 이름(000).hwp" afterDir="false" />
+    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="HU">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/jwchu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Copy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test/Copy.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/guiTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dlib_face_recognition_resnet_model_v1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/dlib_face_recognition_resnet_model_v1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/shape_predictor_68_face_landmarks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/shape_predictor_68_face_landmarks.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seoTest.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test/seoTest.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/guiTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/guiTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/loadTest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/realtime.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/realtime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../전기/3-내선공사실습 11.16(수) 2학년_수업(1-2) 중 수행과제(황&amp;박)-2번, (21)번, 이름(정지원).hwp" beforeDir="false" afterPath="$PROJECT_DIR$/../../전기/3-내선공사실습 11.16(수) 2학년_수업(1-2) 중 수행과제(황&amp;박)-2번, (21)번, 이름(정지원).hwp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../전기/4-내선공사실습 11.16(수 )2학년_수업(3-4) 중 수행과제(황&amp;박)_2반, (  )번, 이름(000).hwp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +68,11 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -254,6 +232,7 @@
       <workItem from="1637412533823" duration="7051000" />
       <workItem from="1637455034208" duration="13422000" />
       <workItem from="1637475555615" duration="1133000" />
+      <workItem from="1637740743935" duration="10873000" />
     </task>
     <task id="LOCAL-00001" summary="CHU">
       <created>1636302299931</created>
@@ -298,11 +277,6 @@
           <line>80</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/realtime.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -311,7 +285,7 @@
     <SUITE FILE_PATH="coverage/seoTest_ipynb$saveFace.coverage" NAME="saveFace Coverage Results" MODIFIED="1637471192651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$cudaTest.coverage" NAME="cudaTest Coverage Results" MODIFIED="1637415759666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1637415964931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime.coverage" NAME="realtime Coverage Results" MODIFIED="1637475781123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime.coverage" NAME="realtime Coverage Results" MODIFIED="1637755361864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$pg.coverage" NAME="pg Coverage Results" MODIFIED="1636288707187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$test.coverage" NAME="test Coverage Results" MODIFIED="1637412864142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyCV.coverage" NAME="onlyCV Coverage Results" MODIFIED="1637463246696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
