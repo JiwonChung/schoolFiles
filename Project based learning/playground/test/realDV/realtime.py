@@ -1,34 +1,93 @@
 import threading
+import time
 from datetime import datetime
 import cv2 as cv2
 from PIL import ImageTk, Image
 import tkinter as tk
+import os
+import numpy as np
 
 
 class GlobalVariables:
     def __init__(self):
         self.count = 0
+        self.previousName = ["", "", ""]
 
-        self.isUnknown = False
-        self.cascadePath = "C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based " \
-                           "learning\\playground\\test\\haarcascades\\haarcascade_frontalface_default.xml "
-        self.faceCascade = cv2.CascadeClassifier(self.cascadePath)
+        self.doesFaceInDB_count = 0
+        self.face_cascade = cv2.CascadeClassifier("C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based "
+                                                  "learning\\playground\\test\\haarcascades"
+                                                  "\\haarcascade_frontalface_default.xml")
         self.recognizer = cv2.face.LBPHFaceRecognizer_create()
-        now = datetime.now()
-        self.recognizer.read("C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based "
-                             "learning\\playground\\test\\trainer\\trainer.yml")
-        print(datetime.now() - now)
+
+        self.capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         self.cvFont = cv2.FONT_HERSHEY_SIMPLEX
-        self.index_name_hash = {
-            1: 'jiwon'
-        }
-        self.capture = cv2.VideoCapture(0)
         # 최소 얼굴 사이즈
         self.minimumFaceSize = int(0.1 * self.capture.get(4))
+        # 시작시
+        BASE_DIR = os.path.dirname("C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based "
+                                   "learning\\playground\\test\\realDV")
+        image_dir = os.path.join(BASE_DIR, "dataset")
+        current_id = 0
+        label_ids = {}
+        y_label = []
+        x_train = []
+        for root, dirs, files in os.walk(image_dir):
+            print(root, dirs, files)
+            for file in files:
+                if file.endswith('png') or file.endswith('jpg'):
+                    path = os.path.join(root, file)
+                    label = os.path.basename(root).replace(" ", "-").lower()
+                    if label not in label_ids:
+                        label_ids[label] = current_id
+                        current_id += 1
+
+                    # 아이디 빙빙
+                    id_ = label_ids[label]
+                    # print(label, "레이블, 아이디", id_)
+
+                    # gray scaled 이미지 빙빙
+                    grayScaled_image = Image.open(path).convert("L")
+
+                    size = (320, 320)
+
+                    # 안티에리어시드 이미지 빙빙
+                    final_image = grayScaled_image.resize(size, Image.ANTIALIAS)
+
+                    # 배열 형태로 빙빙
+                    image_array = np.array(final_image, "uint8")
+
+                    # 얼굴 케스케이드 빙빙
+                    faces = self.get_faces(image_array)
+
+                    for (x, y, w, h) in faces:
+                        regionOfInterest = image_array[y: y + h, x: x + w]
+                        x_train.append(regionOfInterest)
+                        y_label.append(id_)
+
+        self.recognizer.train(x_train, np.array(y_label))
+        self.recognizer.save("recognizers/face-trainer.yml")
+
+        self.recognizer.read("C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based "
+                             "learning\\playground\\test\\recognizers\\face-trainer.yml")
+
+        self.index_name_hash = {y: x for x, y in label_ids.items()}
+        print("index name", self.index_name_hash)
+
+        self.foundPersonIndex = []
+
+    def get_faces(self, img_gray):
+        faces = self.face_cascade.detectMultiScale(
+            img_gray,
+            scaleFactor=1.3,
+            minNeighbors=5,
+            minSize=(self.minimumFaceSize, self.minimumFaceSize)
+        )
+        return faces
 
 
 class GUI:
     def __init__(self, globalVariables):
+
         self.window = tk.Tk(className="정지원만세 - Windows Color")
 
         # 라즈베리 디스플레이 사이즈
@@ -38,8 +97,6 @@ class GUI:
 
         self.font_title = ("Microsoft YaHei UI", 20, "bold")
         self.font_button = ("Microsoft YaHei UI", 15, "bold")
-
-        self.stack = [False, False, False]
 
         # 햄버거 슬라이드 프레임
         self.frame_slide1_left = tk.Frame(master=self.window, width=160, height=320, bg="purple")
@@ -53,7 +110,7 @@ class GUI:
         # 제목 버튼
         self.label_slide1_left_title = tk.Label(
             master=self.frame_slide1_left,
-            text="Sherpa",
+            text="셰비서",
             bg="purple",
             fg="white")
         self.label_slide1_left_title.configure(font=self.font_title)
@@ -68,15 +125,15 @@ class GUI:
             bg="purple",
             fg="white",
             font=self.font_button,
-            command=lambda: self.wait5sec(str(globalVariables.count))
-
+            command=lambda: self.uploadLeftSide(str(globalVariables.count))
         )
         self.button_slide1_left_profile.place(x=0, y=100)
 
         # img 레이블
-        self.label_slide2_img = tk.Label(self.frame_slide1_right)
-        self.label_slide2_img.grid()
+        self.label_slide1_right_img = tk.Label(self.frame_slide1_right)
+        self.label_slide1_right_img.grid()
 
+        # found people
         self.label_slide1_left_foundPerson1 = tk.Label(
             master=self.frame_slide1_left,
             bg="purple",
@@ -96,47 +153,74 @@ class GUI:
             font=self.font_button
         )
 
-    def wait5sec(self, name):
+        # 언너운
+        self.button_slide1_left_unknown = tk.Button(
+            master=self.frame_slide1_left,
+            text="Unknown",
+            width=12,
+            height=1,
+            bg="purple",
+            fg="white",
+            font=self.font_button,
+            command=saveFace
+        )
+
+    def uploadLeftSide(self, name):
         globalVariables.count += 1
-        if not self.stack[0]:
+        count = globalVariables.count % 3
+        if count % 3 == 1:
             self.label_slide1_left_foundPerson1.config(text=name)
             self.label_slide1_left_foundPerson1.place(x=0, y=150)
-            threading.Timer(5, lambda: self.dropLabel(self.label_slide1_left_foundPerson1, 0)).start()
-            self.stack[0] = True
-        elif not self.stack[1]:
+            globalVariables.previousName[0] = name
+            threading.Timer(3, lambda: self.afterTimer(1))
+        elif count % 3 == 2:
             self.label_slide1_left_foundPerson2.config(text=name)
             self.label_slide1_left_foundPerson2.place(x=0, y=180)
-            threading.Timer(5, lambda: self.dropLabel(self.label_slide1_left_foundPerson2, 1)).start()
-            self.stack[1] = True
-        elif not self.stack[2]:
+            globalVariables.previousName[1] = name
+            threading.Timer(3, lambda: self.afterTimer(2))
+        else:
             self.label_slide1_left_foundPerson3.config(text=name)
             self.label_slide1_left_foundPerson3.place(x=0, y=210)
-            threading.Timer(5, lambda: self.dropLabel(self.label_slide1_left_foundPerson3, 2)).start()
-            self.stack[2] = True
+            globalVariables.previousName[2] = name
+            threading.Timer(3, lambda: self.afterTimer(3))
 
-    def dropLabel(self, label, index):
-        label.config(text="")
-        self.stack[0] = False
-        # 첫번 째
-        if index == 0 and self.stack[1] is True:
-            name2 = self.label_slide1_left_foundPerson2['text']
-            self.label_slide1_left_foundPerson1.config(text=name2)
-            self.stack[0] = True
-            self.stack[1] = False
-            if self.stack[2] is True:
-                name3 = self.label_slide1_left_foundPerson3['text']
-                self.label_slide1_left_foundPerson2.config(text=name3)
-                self.label_slide1_left_foundPerson3.config(text="")
-                self.stack[1] = True
-                self.stack[2] = False
-            else:
-                self.label_slide1_left_foundPerson2.config(text="")
-        if index == 1 and self.stack[2] is False:
-            self.label_slide1_left_foundPerson1.config(text="")
-            self.stack[1] = False
-        if index == 2:
-            self.label_slide1_left_foundPerson2.config(text="")
-            self.stack[2] = False
+    def afterTimer(self, index):
+        if index is 1:
+            self.label_slide1_left_foundPerson1.place_forget()
+            globalVariables.previousName[0] = ""
+        elif index is 2:
+            self.label_slide1_left_foundPerson2.place_forget()
+            globalVariables.previousName[1] = ""
+        else:
+            self.label_slide1_left_foundPerson3.place_forget()
+            globalVariables.previousName[2] = ""
+
+    def showUnknown(self):
+        if globalVariables.doesFaceInDB_count >= 10:
+            self.button_slide1_left_unknown.place(x=0, y=240)
+        elif globalVariables.doesFaceInDB_count < -20:
+            self.button_slide1_left_unknown.place_forget()
+
+
+def saveFace():
+    # roi gray 로 연사 조지고 (tmp 로 저장) 10장 찍기
+    # 아이디 받고
+    # dataset 에 저장하기
+    print("start shoot")
+    count = 1
+    while True:
+        _, img = globalVariables.capture.read()
+        grayScaledImage = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        faces = globalVariables.get_faces(grayScaledImage)
+        for (x, y, w, h) in faces:
+            cv2.imwrite("C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based "
+                        "learning\\playground\\test\\dataset\\tmp\\" + str(count) + '.jpg',
+                        grayScaledImage[y: y + h, x: x + w])
+
+            count += 1
+        if count == 11:
+            print("shoot done")
+            break
 
 
 class Square:
@@ -150,42 +234,50 @@ class Square:
 
         if not isReturn:
             return None
-        faces = self.get_faces(img_gray)
+        faces = globalVariables.get_faces(img_gray)
 
         for (x, y, w, h) in faces:
-            doesFaceInDB, name, percentage = self.predict(img_gray, x, y, w, h)
-            img_bgr = self.drawEveryThing(img_bgr, x, y, w, h, name, percentage)
-
-            globalVariables.isUnknown = doesFaceInDB
+            index = self.predict(img_gray, x, y, w, h)
+            if index == -1:
+                name = "unknown"
+            elif index < -1:
+                pass
+            else:
+                name = globalVariables.index_name_hash.get(index)
+                if name is None:
+                    pass
+                flag = False
+                for n in globalVariables.previousName:
+                    if n == name:
+                        flag = True
+                        break
+                if not flag:
+                    gui.uploadLeftSide(name)
+                # else:
+                #     globalVariables.previousName = name
+            img_bgr = self.drawEveryThing(img_bgr, x, y, w, h, name)
         return img_bgr
 
     def predict(self, img_gray, x, y, w, h):
-        index, confidence = globalVariables.recognizer.predict(img_gray[y:y + h, x:x + w])
-        name = "unknown"
-        percentage = 0
-        isThere = False
-        if confidence < 80:
-            name = globalVariables.index_name_hash.get(index)
-            percentage = round(100 - confidence, 2)
-            isThere = True
-            print(percentage, "퍼센트, 이름: ", name)
+        regionOfInterest_gray = img_gray[y: y + h, x: x + w]
+        index, confidence = globalVariables.recognizer.predict(regionOfInterest_gray)
+        print("index: ", index)
+        print("condidence: ", confidence)
+        if 45 < confidence < 70:
+            if globalVariables.doesFaceInDB_count >= 10:
+                globalVariables.doesFaceInDB_count = 10
+            globalVariables.doesFaceInDB_count -= 1
+        else:
+            index = -1
+            if globalVariables.doesFaceInDB_count < 0:
+                globalVariables.doesFaceInDB_count = 0
+            globalVariables.doesFaceInDB_count += 1
+        return index
 
-        return isThere, name, percentage
-
-    def drawEveryThing(self, img, x, y, w, h, name, percentage):
+    def drawEveryThing(self, img, x, y, w, h, name):
         img = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         img = cv2.putText(img, str(name), (x + 5, y - 5), globalVariables.cvFont, 1, (255, 255, 255), 2)
-        img = cv2.putText(img, str(percentage), (x + 5, y + h - 5), globalVariables.cvFont, 1, (255, 255, 0), 1)
         return img
-
-    def get_faces(self, img_gray):
-        faces = globalVariables.faceCascade.detectMultiScale(
-            img_gray,
-            scaleFactor=1.1,
-            minNeighbors=5,
-            minSize=(globalVariables.minimumFaceSize, globalVariables.minimumFaceSize)
-        )
-        return faces
 
     def computeVision(self):
         # ------------------
@@ -195,9 +287,13 @@ class Square:
         img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
         img_rgb = Image.fromarray(img_rgb)
         img_tkinter = ImageTk.PhotoImage(image=img_rgb)
-        gui.label_slide2_img.imgtk = img_tkinter
-        gui.label_slide2_img.configure(image=img_tkinter)
-        gui.label_slide2_img.after(10, self.computeVision)
+        gui.label_slide1_right_img.imgtk = img_tkinter
+        gui.label_slide1_right_img.configure(image=img_tkinter)
+
+        # 언너운 감지하기
+        gui.showUnknown()
+
+        gui.label_slide1_right_img.after(10, self.computeVision)
 
 
 if __name__ == '__main__':
@@ -205,6 +301,5 @@ if __name__ == '__main__':
     gui = GUI(globalVariables)
 
     square = Square(gui, globalVariables)
-
     square.computeVision()
     gui.window.mainloop()
