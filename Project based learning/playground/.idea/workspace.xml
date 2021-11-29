@@ -4,77 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="빙빙">
-      <change afterPath="$PROJECT_DIR$/qldqld/BAC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qldqld/GUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qldqld/Reference.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qldqld/img/jiwon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/23.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/24.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/26.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/27.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/28.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/29.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/jiwon/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/dataset/tmp/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/face-train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/realDV/takemyPicture.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/recognizers/face-trainer.yml" afterDir="false" />
+    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="눈물날 것 같애">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dataset/user.1.9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/dataset/jiwon/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/realDV/realtime.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/realDV/realtime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/saveFace.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/saveFace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/trainFace.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/trainFace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qldqld/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/qldqld/GUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +49,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/PyCharm2021.2/python_stubs/1527900386/cv2/__init__.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/site-packages/face_recognition/api.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/datetime.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/tkinter/__init__.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1zFpV6Q53FfbJY1O2qyW27bBzuu" />
@@ -309,7 +243,9 @@
       <workItem from="1637945760989" duration="5357000" />
       <workItem from="1637978570374" duration="11574000" />
       <workItem from="1637994179148" duration="25490000" />
-      <workItem from="1638056978879" duration="49932000" />
+      <workItem from="1638056978879" duration="51025000" />
+      <workItem from="1638116310612" duration="83000" />
+      <workItem from="1638190529385" duration="2581000" />
     </task>
     <task id="LOCAL-00001" summary="CHU">
       <created>1636302299931</created>
@@ -325,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637990934886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="눈물날 것 같애">
+      <created>1638110863442</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638110863443</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +290,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="CHU" />
     <MESSAGE value="빙빙" />
-    <option name="LAST_COMMIT_MESSAGE" value="빙빙" />
+    <MESSAGE value="눈물날 것 같애" />
+    <option name="LAST_COMMIT_MESSAGE" value="눈물날 것 같애" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -374,7 +318,7 @@
     <SUITE FILE_PATH="coverage/seoTest_ipynb$cudaTest.coverage" NAME="cudaTest Coverage Results" MODIFIED="1637415759666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$Reference.coverage" NAME="Reference Coverage Results" MODIFIED="1638076623745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1637415964931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638108003370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638192705396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyCV.coverage" NAME="onlyCV Coverage Results" MODIFIED="1637463246696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyUI.coverage" NAME="onlyUI Coverage Results" MODIFIED="1637989836356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$main.coverage" NAME="main Coverage Results" MODIFIED="1636290448155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

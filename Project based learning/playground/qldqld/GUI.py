@@ -61,7 +61,7 @@ class RecognizeFace:
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
         rgb_small_frame = cv2.cvtColor(small_image, cv2.COLOR_BGR2RGB)
 
-        # Only process every other frame of video to save time
+        # 3개 중 하나만
         if self.process_this_frame % 3 == 0:
             # Find all the faces and face encodings in the current frame of video
             self.face_locations = face_recognition.face_locations(rgb_small_frame)
@@ -77,7 +77,7 @@ class RecognizeFace:
                 face_distances = face_recognition.face_distance(self.init.encodings, face_encoding)
                 print("face_distance: ", face_distances)
                 best_match_index = np.argmin(face_distances)
-                if matches[best_match_index] and face_distances[best_match_index] < 0.65:
+                if matches[best_match_index] and face_distances[best_match_index] < 0.6:
                     print("best_match_index: ", best_match_index)
                     name = self.init.label_ids[best_match_index]
                     init.knownCount -= 1
@@ -490,14 +490,24 @@ class View:
         self.viewController()
 
     def button_slide2_left_confirm_callback(self):
-        _profile = self.profiles[self.profileIndex]
-        old_path = "img/" + _profile.get_name() + ".jpg"
-        new_name = 'img/' + self.entry_slide2_left_nameInput.get() + '.jpg'
-        if os.path.isfile(old_path):
-            os.rename(old_path, new_name)
-        self.profiles[self.profileIndex].set_name(self.entry_slide2_left_nameInput.get())
-        self.profiles[self.profileIndex].set_imagePath('C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based '
-                                                       'learning\\playground\\qldqld\\img\\' + self.entry_slide2_left_nameInput.get() + '.jpg')
+        _name = self.entry_slide2_left_nameInput.get()
+        if os.path.isfile("img/tmp.jpg"):
+            old_path = "img/tmp.jpg"
+            new_name = 'img/' + _name + '.jpg'
+            if os.path.isfile(old_path):
+                os.rename(old_path, new_name)
+            self.profiles[self.profileIndex].set_name(_name)
+            self.profiles[self.profileIndex].set_imagePath('C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based '
+                                                           'learning\\playground\\qldqld\\img\\' + _name + '.jpg')
+        else :
+            _profile = self.profiles[self.profileIndex]
+            old_path = "img/" + _profile.get_name() + ".jpg"
+            new_name = 'img/' + _name + '.jpg'
+            if os.path.isfile(old_path):
+                os.rename(old_path, new_name)
+            self.profiles[self.profileIndex].set_name(_name)
+            self.profiles[self.profileIndex].set_imagePath('C:\\Users\\jwchu\\Documents\\schoolFiles\\Project based '
+                                                           'learning\\playground\\qldqld\\img\\' + _name + '.jpg')
         self.viewVariable = 0
         # 곧바로 사용 할 거면 여기서 학습
         self.viewController()
