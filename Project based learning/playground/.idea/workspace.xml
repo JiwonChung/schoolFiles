@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="눈물날 것 같애">
+    <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="아아">
+      <change afterPath="$PROJECT_DIR$/qldqld/img/ABC.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qldqld/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/qldqld/GUI.py" afterDir="false" />
     </list>
@@ -245,7 +246,7 @@
       <workItem from="1637994179148" duration="25490000" />
       <workItem from="1638056978879" duration="51025000" />
       <workItem from="1638116310612" duration="83000" />
-      <workItem from="1638190529385" duration="2581000" />
+      <workItem from="1638190529385" duration="4088000" />
     </task>
     <task id="LOCAL-00001" summary="CHU">
       <created>1636302299931</created>
@@ -268,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638110863443</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="아아">
+      <created>1638193143601</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638193143601</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +299,8 @@
     <MESSAGE value="CHU" />
     <MESSAGE value="빙빙" />
     <MESSAGE value="눈물날 것 같애" />
-    <option name="LAST_COMMIT_MESSAGE" value="눈물날 것 같애" />
+    <MESSAGE value="아아" />
+    <option name="LAST_COMMIT_MESSAGE" value="아아" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -318,7 +327,7 @@
     <SUITE FILE_PATH="coverage/seoTest_ipynb$cudaTest.coverage" NAME="cudaTest Coverage Results" MODIFIED="1637415759666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$Reference.coverage" NAME="Reference Coverage Results" MODIFIED="1638076623745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1637415964931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638192705396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638194642889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyCV.coverage" NAME="onlyCV Coverage Results" MODIFIED="1637463246696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyUI.coverage" NAME="onlyUI Coverage Results" MODIFIED="1637989836356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$main.coverage" NAME="main Coverage Results" MODIFIED="1636290448155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

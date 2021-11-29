@@ -2,6 +2,8 @@ import os
 import threading
 import tkinter as tk
 from datetime import datetime
+
+import PIL.Image
 import cv2
 import numpy as np
 from PIL import ImageTk, Image
@@ -465,7 +467,14 @@ class View:
 
         # 사진 넘겨주기
         cam = cv2.imread(_profile.get_imagePath(), cv2.IMREAD_COLOR)
-        img = cv2.resize(cam, dsize=(0, 0), fx=0.5, fy=0.5)
+        i = PIL.Image.open(_profile.get_imagePath())
+        width, height = i.size
+        f = 0
+        if width > height:
+            f = 320 / width
+        else:
+            f = 320 / height
+        img = cv2.resize(cam, dsize=(0, 0), fx=f, fy=f)
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img_rgb = Image.fromarray(img_rgb)
         img_tkinter = ImageTk.PhotoImage(image=img_rgb)
@@ -522,7 +531,14 @@ class View:
 
             # 이미지 수정하기
             image = cv2.imread(_profile.get_imagePath(), cv2.IMREAD_COLOR)
-            img = cv2.resize(image, dsize=(0, 0), fx=0.5, fy=0.5)
+            i = PIL.Image.open(_profile.get_imagePath())
+            width, height = i.size
+            f = 0
+            if width > height:
+                f = 320 / width
+            else:
+                f = 320 / height
+            img = cv2.resize(image, dsize=(0, 0), fx=f, fy=f)
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img_rgb = Image.fromarray(img_rgb)
             img_tkinter = ImageTk.PhotoImage(image=img_rgb)
@@ -544,7 +560,14 @@ class View:
 
             # 이미지 수정하기
             image = cv2.imread(_profile.get_imagePath(), cv2.IMREAD_COLOR)
-            img = cv2.resize(image, dsize=(0, 0), fx=0.5, fy=0.5)
+            i = PIL.Image.open(_profile.get_imagePath())
+            width, height = i.size
+            f = 0
+            if width > height:
+                f = 320 / width
+            else:
+                f = 320 / height
+            img = cv2.resize(image, dsize=(0, 0), fx=f, fy=f)
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img_rgb = Image.fromarray(img_rgb)
             img_tkinter = ImageTk.PhotoImage(image=img_rgb)
@@ -562,7 +585,14 @@ class View:
         cam = cv2.imread(self.profiles[self.profileIndex].get_imagePath(), cv2.IMREAD_COLOR)
 
         # 사진 넘겨주기
-        img = cv2.resize(cam, dsize=(0, 0), fx=0.5, fy=0.5)
+        i = PIL.Image.open(self.profiles[self.profileIndex].get_imagePath())
+        width, height = i.size
+        f = 0
+        if width > height:
+            f = 320 / width
+        else:
+            f = 320 / height
+        img = cv2.resize(cam, dsize=(0, 0), fx=f, fy=f)
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img_rgb = Image.fromarray(img_rgb)
         img_tkinter = ImageTk.PhotoImage(image=img_rgb)
