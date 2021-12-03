@@ -57,25 +57,24 @@ class RecognizeFace:
         # 사진 읽어오기
         _, received_image = video_capture.read()
 
-        # Resize frame of video to 1/4 size for faster face recognition processing
+        # 얼굴을 4분의 1절 내서 연산 과정을 줄이자!
         small_image = cv2.resize(received_image, (0, 0), fx=0.25, fy=0.25)
 
-        # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
+
         rgb_small_frame = cv2.cvtColor(small_image, cv2.COLOR_BGR2RGB)
 
         # 3개 중 하나만
         if self.process_this_frame % 3 == 0:
-            # Find all the faces and face encodings in the current frame of video
+            # dlib 의 face
             self.face_locations = face_recognition.face_locations(rgb_small_frame)
             face_encodings = face_recognition.face_encodings(rgb_small_frame, self.face_locations)
 
             self.face_names = []
             for face_encoding in face_encodings:
-                # See if the face is a match for the known face(s)
+                # 갖고 있는 얼굴중 비슷한게 있는지 찾기
                 matches = face_recognition.compare_faces(self.init.encodings, face_encoding)
                 name = "Unknown"
 
-                # Or instead, use the known face with the smallest distance to the new face
                 face_distances = face_recognition.face_distance(self.init.encodings, face_encoding)
                 print("face_distance: ", face_distances)
                 best_match_index = np.argmin(face_distances)
@@ -95,18 +94,18 @@ class RecognizeFace:
 
         self.process_this_frame += 1
 
-        # return img
+        # 사진에 그림그리기
         for (top, right, bottom, left), name in zip(self.face_locations, self.face_names):
-            # Scale back up face locations since the frame we detected in was scaled to 1/4 size
+            # 아까 구라친 1/4절에서 얻은 값을 원본으로 돌림
             top *= 4
             right *= 4
             bottom *= 4
             left *= 4
 
-            # Draw a box around the face
+            # 사진에 네모 그리기
             received_image = cv2.rectangle(received_image, (left, top), (right, bottom), (0, 0, 255), 2)
 
-            # Draw a label with a name below the face
+            # 네모 옆에 글씨써주기
             received_image = cv2.rectangle(received_image, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             received_image = cv2.putText(received_image, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
@@ -127,6 +126,12 @@ class RecognizeFace:
 
 
 class View:
+    def showUnknown(self):
+        if init.knownCount >= 3:
+            self.button_slide1_left_unknown.place(x=0, y=240)
+        elif init.knownCount < -5:
+            self.button_slide1_left_unknown.place_forget()
+
     def __init__(self, init):
         self.profileIndex = 0
 
@@ -407,12 +412,6 @@ class View:
         # img 레이블
         self.label_slide3_right_img = tk.Label(self.frame_slide3_right)
         # self.label_slide3_right_img.grid()
-
-    def showUnknown(self):
-        if init.knownCount >= 3:
-            self.button_slide1_left_unknown.place(x=0, y=240)
-        elif init.knownCount < -5:
-            self.button_slide1_left_unknown.place_forget()
 
     def uploadLeftSide(self, name):
         self.count += 1
@@ -750,7 +749,6 @@ class Profile:
 
     def get_id(self):
         return self._id
-
 
 if __name__ == '__main__':
 

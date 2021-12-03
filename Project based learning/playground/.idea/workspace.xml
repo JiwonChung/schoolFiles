@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94578153-2588-4625-a340-510422bf89d7" name="Changes" comment="아아">
-      <change afterPath="$PROJECT_DIR$/qldqld/img/ABC.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qldqld/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/qldqld/GUI.py" afterDir="false" />
     </list>
@@ -48,12 +47,6 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/PyCharm2021.2/python_stubs/1527900386/cv2/__init__.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/site-packages/face_recognition/api.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/datetime.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$USER_HOME$/anaconda3/envs/for_pbl/Lib/tkinter/__init__.py" root0="SKIP_INSPECTION" />
-  </component>
   <component name="ProjectId" id="1zFpV6Q53FfbJY1O2qyW27bBzuu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -70,12 +63,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/qldqld/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -247,6 +240,8 @@
       <workItem from="1638056978879" duration="51025000" />
       <workItem from="1638116310612" duration="83000" />
       <workItem from="1638190529385" duration="4088000" />
+      <workItem from="1638441545148" duration="7369000" />
+      <workItem from="1638458000529" duration="677000" />
     </task>
     <task id="LOCAL-00001" summary="CHU">
       <created>1636302299931</created>
@@ -324,22 +319,22 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$cudaTest.coverage" NAME="cudaTest Coverage Results" MODIFIED="1637415759666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$Reference.coverage" NAME="Reference Coverage Results" MODIFIED="1638076623745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$guiTest.coverage" NAME="guiTest Coverage Results" MODIFIED="1637415964931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638194642889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyCV.coverage" NAME="onlyCV Coverage Results" MODIFIED="1637463246696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyUI.coverage" NAME="onlyUI Coverage Results" MODIFIED="1637989836356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$main.coverage" NAME="main Coverage Results" MODIFIED="1636290448155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$losfTest.coverage" NAME="losfTest Coverage Results" MODIFIED="1636897884281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$face_train.coverage" NAME="face-train Coverage Results" MODIFIED="1638060471813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$trainFace.coverage" NAME="trainFace Coverage Results" MODIFIED="1637471231419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime__1_.coverage" NAME="realtime (1) Coverage Results" MODIFIED="1637989917404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$showinfo.coverage" NAME="showinfo Coverage Results" MODIFIED="1637982057400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$saveFace.coverage" NAME="saveFace Coverage Results" MODIFIED="1638060694149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime.coverage" NAME="realtime Coverage Results" MODIFIED="1638062943211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
-    <SUITE FILE_PATH="coverage/seoTest_ipynb$pg.coverage" NAME="showinfo Coverage Results" MODIFIED="1637981656498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1638194642889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyCV.coverage" NAME="onlyCV Coverage Results" MODIFIED="1637463246696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$test.coverage" NAME="test Coverage Results" MODIFIED="1637412864142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$cudaTest.coverage" NAME="cudaTest Coverage Results" MODIFIED="1637415759666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$face_train.coverage" NAME="face-train Coverage Results" MODIFIED="1638060471813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/seoTest_ipynb$showinfo__1_.coverage" NAME="showinfo (1) Coverage Results" MODIFIED="1637981780610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$pg.coverage" NAME="showinfo Coverage Results" MODIFIED="1637981656498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime.coverage" NAME="realtime Coverage Results" MODIFIED="1638062943211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$realtime__1_.coverage" NAME="realtime (1) Coverage Results" MODIFIED="1637989917404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$onlyUI.coverage" NAME="onlyUI Coverage Results" MODIFIED="1637989836356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/realDV" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$saveFace.coverage" NAME="saveFace Coverage Results" MODIFIED="1638060694149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$showinfo.coverage" NAME="showinfo Coverage Results" MODIFIED="1637982057400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$Reference.coverage" NAME="Reference Coverage Results" MODIFIED="1638076623745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/qldqld" />
+    <SUITE FILE_PATH="coverage/seoTest_ipynb$trainFace.coverage" NAME="trainFace Coverage Results" MODIFIED="1637471231419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>
